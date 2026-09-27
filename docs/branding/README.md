@@ -1,6 +1,6 @@
 # Branchstate identity
 
-The mark represents branching histories with square nodes and two contrasting paths. These are product-owned assets; no external branding service or repository is required to render the project README.
+The mark represents branching histories with square nodes and two contrasting paths. Its geometry and composition were prepared for Branchstate, using colors from Gruvbox by Pavel Pertsev (morhetz). No external branding service or repository is required to render the project README.
 
 - `mark.svg`: editable vector original, 512 × 512 view box.
 - `icon.png`: 1024 × 1024 export for project icons.
@@ -9,7 +9,7 @@ The mark represents branching histories with square nodes and two contrasting pa
 
 Palette: charcoal `#282828`, cream `#ebdbb2`, olive `#b8bb26`, mustard `#d79921`, muted cream `#bdae93`. SVGs contain geometry and, in the preview, editable text using the renderer's sans-serif font. They contain no embedded raster images, scripts, external fonts or external image references.
 
-Source: project-specific geometric artwork prepared with the maintainer; the product mark was already used for its Jira space. No stock assets or external logos were imported. Files are covered by the repository MIT license; no claim of trademark clearance is made.
+Source: project-specific geometric artwork prepared with the maintainer; the product mark was already used for its Jira space. No stock assets or external logos were imported. Project-owned artwork is covered by the repository MIT license. The reused palette values, pinned upstream source, author credit, and upstream MIT declaration are recorded in [third-party notices](THIRD_PARTY_NOTICES.md). No claim of trademark clearance or endorsement by Gruvbox is made. Keep these notices with redistributed asset bundles.
 
 PNG exports were produced with `rsvg-convert`. To regenerate from the repository root:
 

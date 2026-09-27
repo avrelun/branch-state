@@ -30,4 +30,4 @@ Before the first commit, omit `--revision HEAD` to check staged files. Enable th
 
 ## Licensing
 
-Project-owned code and accompanying documentation are licensed under the [MIT License](LICENSE). Third-party materials retain their applicable licenses. See the publication policy for provenance and third-party material requirements.
+Project-owned code and accompanying documentation are licensed under the [MIT License](LICENSE). Third-party materials retain their applicable licenses. The branding uses colors from Gruvbox by Pavel Pertsev (morhetz); see [branding third-party notices](docs/branding/THIRD_PARTY_NOTICES.md). See the publication policy for provenance and third-party material requirements.

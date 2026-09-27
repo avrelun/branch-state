@@ -26,7 +26,7 @@ python3 scripts/check-publication.py --revision HEAD
 git diff --check
 ```
 
-Before the first commit, omit `--revision HEAD` to check staged files. Enable the reviewed local pre-commit hook with `git config --local core.hooksPath .githooks`. It runs the publication guard and whitespace check. CI checks the committed tree. These are repository checks; application tests arrive with M0.
+Before the first commit, omit `--revision HEAD` to check staged files. Enable the reviewed local hooks with `git config --local core.hooksPath .githooks`. Pre-commit runs the publication guard and whitespace check; pre-push checks the pushed tips. CI checks the committed tree. The guard requires current [asset provenance records](docs/engineering/asset-provenance.json), including tracked license notices, for supported media and fonts. These records require substantive review; passing checks do not establish legal clearance. These are repository checks; application tests arrive with M0.
 
 ## Licensing
 

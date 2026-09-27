@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640" role="img" aria-labelledby="title desc">
+<title id="title">Branchstate</title><desc id="desc">A synthetic business simulator. Coherent history. Reproducible worlds.</desc>
+<rect width="1280" height="640" fill="#282828"/>
+<g transform="translate(34 128) scale(.75)"><rect width="512" height="512" fill="#282828"/><path d="M256 366V256L164 164M256 256L348 164" fill="none" stroke="#B8BB26" stroke-width="32" stroke-linejoin="miter"/><g fill="#B8BB26"><rect x="116" y="116" width="80" height="80"/><rect x="216" y="326" width="80" height="80"/></g><rect x="316" y="116" width="80" height="80" fill="#D79921"/></g>
+<text x="440" y="280" fill="#ebdbb2" font-family="sans-serif" font-size="76" font-weight="bold">Branchstate</text>
+<text x="444" y="342" fill="#bdae93" font-family="sans-serif" font-size="29">A synthetic business simulator.</text>
+<path d="M444 390H524" stroke="#d79921" stroke-width="5"/>
+<text x="444" y="444" fill="#ebdbb2" font-family="sans-serif" font-size="23">Coherent history. Reproducible worlds.</text>
+</svg>

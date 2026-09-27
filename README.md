@@ -1,3 +1,5 @@
+<img src="docs/branding/mark.svg" alt="Branchstate branching mark" width="96" height="96">
+
 # Branchstate
 
 A synthetic retail world whose data comes from a coherent, reproducible simulation history. Start small, inspect consequences, and later compare alternative histories.

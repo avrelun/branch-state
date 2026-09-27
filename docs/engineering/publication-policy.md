@@ -18,7 +18,13 @@ Review the complete initial tree and subsequent diffs. Use a GitHub noreply addr
 
 ## Checks and limits
 
-The local hook and CI inspect tracked blobs for prohibited paths, common credential signatures, private-key markers, archives, and large files. They are a narrow guard against accidents, not a legal clearance or comprehensive secret scanner. License decisions and provenance require review. Changes to the guard, CI, and publication exclusions require explicit reviewer attention.
+Graphics, font files, audio and video with the extensions listed in `scripts/provenance.py` require a record in `docs/engineering/asset-provenance.json`. Each record identifies the file hash, sources, authors, license declarations, scope of reuse, tracked notice hashes, and evidence of inspection. Include third-party inputs even when the resulting composition was generated locally: palettes, fonts, icons and reference assets are separate provenance questions. An asset can have project-owned and third-party inputs simultaneously.
+
+Before committing or publishing an asset change, inspect the actual upstream source and license, preserve notices, then update its record. If the origin or rights remain unresolved, keep the asset out of the publication candidate and report the blocker. Do not refresh hashes mechanically to make a failing check pass. Human review of source claims remains separate from agent preparation and self-checks. The PR must state what was inspected and any uncertainty.
+
+The publication command checks the index during pre-commit, each pushed tip during pre-push, and the committed tree in CI. Missing records, changed assets, missing notices, and changed notice contents fail. Working-tree records cannot conceal missing or stale records in the checked snapshot. Record additional formats when introduced; code, dependencies, datasets and text imports still require manual provenance review and are not automatically classified by this asset check.
+
+The local hooks and CI also inspect tracked blobs for prohibited paths, common credential signatures, private-key markers, archives, and large files. They are a narrow guard against accidents, not a legal clearance or comprehensive secret scanner. The asset check validates completeness and freshness, not whether an author, source or license claim is true. It cannot detect an undeclared palette inside an otherwise complete record. Hooks are bypassable and CI code can be changed in a PR; required maintainer review remains essential. Changes to the guard, provenance records, CI, and publication exclusions require explicit reviewer attention.
 
 References, checked September 27, 2026:
 

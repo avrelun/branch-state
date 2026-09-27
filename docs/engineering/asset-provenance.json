@@ -1,0 +1,113 @@
+{
+  "version": 1,
+  "assets": [
+    {
+      "path": "docs/branding/mark.svg",
+      "sha256": "2e2abf9df6f6e4cc4f337a15dc58feb4791dbd0821fbad772efb38c292069f22",
+      "sources": [
+        {
+          "kind": "project",
+          "origin": "Prepared for Branchstate with the maintainer; editable geometry in docs/branding/mark.svg and social-preview.svg",
+          "author": "Yevhen Zavoloka with Codex assistance",
+          "license": "MIT",
+          "scope": "Project-specific geometry and composition; no ownership claim over Gruvbox palette",
+          "notices": {
+            "LICENSE": "76204238c8ede4078c55d88bce695c276f92eee716e30c17a415d87f90e5942e"
+          }
+        },
+        {
+          "kind": "third-party",
+          "origin": "https://github.com/morhetz/gruvbox/blob/ef8864bb42bf244f0295d1c5a403b27e3d139695/colors/gruvbox.vim",
+          "author": "Pavel Pertsev (morhetz)",
+          "license": "MIT (declared upstream)",
+          "scope": "Palette values only; see notice for source definitions and upstream license declaration",
+          "notices": {
+            "docs/branding/THIRD_PARTY_NOTICES.md": "53047fc1e8e94a02ce8e76331da11d947f11d878b268c758bf66522e957d73cd"
+          }
+        }
+      ],
+      "evidence": "Codex self-check, 2026-09-27: palette values compared with pinned Gruvbox source; package.json and README license declarations checked. Geometry prepared locally; PNGs exported from local SVGs. SVG uses system sans-serif text, without embedding or redistributing font files. This record does not constitute independent human approval or legal clearance."
+    },
+    {
+      "path": "docs/branding/icon.png",
+      "sha256": "cda509dbe40b447aaa95ecef1830d27ec83a45cc7db36f2d8979fec4a50711d2",
+      "sources": [
+        {
+          "kind": "project",
+          "origin": "Prepared for Branchstate with the maintainer; editable geometry in docs/branding/mark.svg and social-preview.svg",
+          "author": "Yevhen Zavoloka with Codex assistance",
+          "license": "MIT",
+          "scope": "Project-specific geometry and composition; no ownership claim over Gruvbox palette",
+          "notices": {
+            "LICENSE": "76204238c8ede4078c55d88bce695c276f92eee716e30c17a415d87f90e5942e"
+          }
+        },
+        {
+          "kind": "third-party",
+          "origin": "https://github.com/morhetz/gruvbox/blob/ef8864bb42bf244f0295d1c5a403b27e3d139695/colors/gruvbox.vim",
+          "author": "Pavel Pertsev (morhetz)",
+          "license": "MIT (declared upstream)",
+          "scope": "Palette values only; see notice for source definitions and upstream license declaration",
+          "notices": {
+            "docs/branding/THIRD_PARTY_NOTICES.md": "53047fc1e8e94a02ce8e76331da11d947f11d878b268c758bf66522e957d73cd"
+          }
+        }
+      ],
+      "evidence": "Codex self-check, 2026-09-27: palette values compared with pinned Gruvbox source; package.json and README license declarations checked. Geometry prepared locally; PNGs exported from local SVGs. SVG uses system sans-serif text, without embedding or redistributing font files. This record does not constitute independent human approval or legal clearance."
+    },
+    {
+      "path": "docs/branding/social-preview.svg",
+      "sha256": "913beca24f67902cdabe2bde4084a0ade86f3be45820ffb8dd29460d4166ac30",
+      "sources": [
+        {
+          "kind": "project",
+          "origin": "Prepared for Branchstate with the maintainer; editable geometry in docs/branding/mark.svg and social-preview.svg",
+          "author": "Yevhen Zavoloka with Codex assistance",
+          "license": "MIT",
+          "scope": "Project-specific geometry and composition; no ownership claim over Gruvbox palette",
+          "notices": {
+            "LICENSE": "76204238c8ede4078c55d88bce695c276f92eee716e30c17a415d87f90e5942e"
+          }
+        },
+        {
+          "kind": "third-party",
+          "origin": "https://github.com/morhetz/gruvbox/blob/ef8864bb42bf244f0295d1c5a403b27e3d139695/colors/gruvbox.vim",
+          "author": "Pavel Pertsev (morhetz)",
+          "license": "MIT (declared upstream)",
+          "scope": "Palette values only; see notice for source definitions and upstream license declaration",
+          "notices": {
+            "docs/branding/THIRD_PARTY_NOTICES.md": "53047fc1e8e94a02ce8e76331da11d947f11d878b268c758bf66522e957d73cd"
+          }
+        }
+      ],
+      "evidence": "Codex self-check, 2026-09-27: palette values compared with pinned Gruvbox source; package.json and README license declarations checked. Geometry prepared locally; PNGs exported from local SVGs. SVG uses system sans-serif text, without embedding or redistributing font files. This record does not constitute independent human approval or legal clearance."
+    },
+    {
+      "path": "docs/branding/social-preview.png",
+      "sha256": "c6bcd1c39d11fb029ab255a352211333346fedbb3db5cb422686aae1006b88ef",
+      "sources": [
+        {
+          "kind": "project",
+          "origin": "Prepared for Branchstate with the maintainer; editable geometry in docs/branding/mark.svg and social-preview.svg",
+          "author": "Yevhen Zavoloka with Codex assistance",
+          "license": "MIT",
+          "scope": "Project-specific geometry and composition; no ownership claim over Gruvbox palette",
+          "notices": {
+            "LICENSE": "76204238c8ede4078c55d88bce695c276f92eee716e30c17a415d87f90e5942e"
+          }
+        },
+        {
+          "kind": "third-party",
+          "origin": "https://github.com/morhetz/gruvbox/blob/ef8864bb42bf244f0295d1c5a403b27e3d139695/colors/gruvbox.vim",
+          "author": "Pavel Pertsev (morhetz)",
+          "license": "MIT (declared upstream)",
+          "scope": "Palette values only; see notice for source definitions and upstream license declaration",
+          "notices": {
+            "docs/branding/THIRD_PARTY_NOTICES.md": "53047fc1e8e94a02ce8e76331da11d947f11d878b268c758bf66522e957d73cd"
+          }
+        }
+      ],
+      "evidence": "Codex self-check, 2026-09-27: palette values compared with pinned Gruvbox source; package.json and README license declarations checked. Geometry prepared locally; PNGs exported from local SVGs. SVG uses system sans-serif text, without embedding or redistributing font files. This record does not constitute independent human approval or legal clearance."
+    }
+  ]
+}

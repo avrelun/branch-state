@@ -43,4 +43,6 @@ Start with Milestone 0. Defer AI, branching, event sourcing, and background infr
 - Document the necessary rationale and alternatives for product decisions inside this repository.
 - Work on a topic branch and submit a PR. Maintainer review is required before merge; agent self-checks are not human approval. Do not push directly to main without explicit integration approval.
 - Use CONTRIBUTING.md for contribution and attribution rules and docs/engineering/publication-policy.md for provenance and publication checks.
+- Before publishing assets, inspect all inputs, including palettes, fonts and generated derivatives. Record sources, license notices and inspection evidence in docs/engineering/asset-provenance.json; recheck changed assets and notices before updating hashes. Generated geometry and passing checks do not establish originality or legal clearance.
+- State what was checked and any unresolved provenance in the PR. Keep unresolved materials out of the publication candidate, and never substitute agent self-checks for maintainer approval.
 - Project-owned code and accompanying documentation use the root MIT LICENSE. Preserve third-party terms.

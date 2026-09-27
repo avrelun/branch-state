@@ -6,6 +6,8 @@ import re
 import subprocess
 import sys
 
+from provenance import inspect_provenance
+
 LOCAL_PREFIXES = ('docs/operations/', 'docs/research/', 'docs/work/', 'assets/', '.wrangler/')
 LOCAL_FILES = {'ROADMAP.md', 'docs/NEXT_SESSION.md', 'branchstate-starter.zip'}
 PATTERNS = [
@@ -55,6 +57,7 @@ def main():
         records = git('ls-files', '--stage', '-z').split(b'\0')
     failed = False
     count = 0
+    blobs = {}
     for record in filter(None, records):
         metadata, raw_path = record.split(b'\t', 1)
         fields = metadata.decode().split()
@@ -68,6 +71,8 @@ def main():
                 return 1
         path = raw_path.decode('utf-8', errors='surrogateescape')
         data = git('cat-file', 'blob', oid) if kind == 'blob' else b''
+        if kind == 'blob':
+            blobs[path] = data
         reasons = inspect(path, mode, data)
         count += 1
         if reasons:
@@ -76,6 +81,9 @@ def main():
     if not count:
         print('FAIL: no files to inspect')
         return 1
+    for reason in inspect_provenance(blobs):
+        print(f'FAIL: {reason}')
+        failed = True
     print(f'Inspected {count} blobs; {"FAIL" if failed else "PASS"}. Heuristic checks do not establish licensing or absence of secrets.')
     return int(failed)
 

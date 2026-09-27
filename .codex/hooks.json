@@ -1,0 +1,16 @@
+{
+  "description": "Restore Branchstate review and publication rules at session boundaries. Advisory, not an authorization or legal gate.",
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$(git rev-parse --show-toplevel)/scripts/codex-session-context.py\"",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
+}

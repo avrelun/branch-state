@@ -1,0 +1,29 @@
+# Personal operational records stay on this machine.
+/docs/operations/
+/docs/NEXT_SESSION.md
+
+# Local secrets and runtime state.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.venv/
+__pycache__/
+*.py[cod]
+node_modules/
+dist/
+coverage/
+.pytest_cache/
+.ruff_cache/
+.DS_Store
+
+# Local Cloudflare tooling state.
+.wrangler/
+
+# Historical research, personal branding, and handoffs stay local for now.
+/docs/research/
+/docs/work/
+/assets/
+/ROADMAP.md
+/branchstate-starter.zip

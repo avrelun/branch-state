@@ -25,7 +25,7 @@ python3 scripts/init_local_env.py
 docker compose up --detach --wait --wait-timeout 90 db
 ```
 
-The setup command generates a password in an untracked, private `.env` and refuses to overwrite an existing file. `.env.example` lists the settings. Adjust `POSTGRES_PORT` if 5432 is occupied; keep real credentials out of Git. Compose passes database settings explicitly to the container. Changing initialization credentials later does not alter an existing database.
+The setup command generates a password in an untracked, private `.env` and refuses to overwrite an existing file. `.env.example` lists the settings. Adjust `POSTGRES_PORT` if 5432 is occupied; keep real credentials out of Git. Compose passes database settings explicitly to the container and initializes SCRAM authentication for all TCP connections, including container loopback. Changing initialization settings later does not alter an existing database.
 
 PostgreSQL **18.6** is pinned by image digest. Data is stored in the project's `postgres-data` volume mounted at `/var/lib/postgresql`, with the image's default `PGDATA=/var/lib/postgresql/18/docker`. The published port binds to `127.0.0.1`. A host application connects to `127.0.0.1:<POSTGRES_PORT>`; later Compose application containers connect to `db:5432`. The healthcheck waits for readiness; verify authenticated SQL separately:
 

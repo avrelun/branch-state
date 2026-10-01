@@ -1,0 +1,40 @@
+packages: []
+
+strictPeerDependencies: true
+saveExact: true
+engineStrict: true
+allowBuilds:
+  nx@23.2.1: true
+  esbuild@0.28.2: true
+  '@parcel/watcher@2.6.0': false
+  lmdb@3.5.6: false
+  msgpackr-extract@3.0.4: false
+minimumReleaseAgeExclude:
+  - '@angular-devkit/architect@0.2202.1'
+  - '@angular-devkit/core@22.2.1'
+  - '@angular-devkit/schematics@22.2.1'
+  - '@angular/build@22.2.1'
+  - '@angular/cli@22.2.1'
+  - '@angular/common@22.2.1'
+  - '@angular/compiler-cli@22.2.1'
+  - '@angular/compiler@22.2.1'
+  - '@angular/core@22.2.1'
+  - '@angular/forms@22.2.1'
+  - '@angular/language-service@22.2.1'
+  - '@angular/platform-browser@22.2.1'
+  - '@angular/router@22.2.1'
+  - '@orval/angular@8.39.0'
+  - '@orval/axios@8.39.0'
+  - '@orval/core@8.39.0'
+  - '@orval/effect@8.39.0'
+  - '@orval/fetch@8.39.0'
+  - '@orval/hono@8.39.0'
+  - '@orval/mcp@8.39.0'
+  - '@orval/mock@8.39.0'
+  - '@orval/pinia-colada@8.39.0'
+  - '@orval/query@8.39.0'
+  - '@orval/solid-start@8.39.0'
+  - '@orval/swr@8.39.0'
+  - '@orval/zod@8.39.0'
+  - '@schematics/angular@22.2.1'
+  - orval@8.39.0

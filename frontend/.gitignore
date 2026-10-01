@@ -1,0 +1,4 @@
+.nx/
+.angular/
+out-tsc/
+test-output/

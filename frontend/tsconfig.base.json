@@ -1,0 +1,22 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "preserve",
+    "moduleResolution": "bundler",
+    "lib": ["ES2022", "DOM", "ESNext.Temporal"],
+    "strict": true,
+    "experimentalDecorators": true,
+    "skipLibCheck": true,
+    "importHelpers": true,
+    "paths": {
+      "@branchstate/platform": ["./libs/platform/src/index.ts"],
+      "@branchstate/api-client": ["./libs/api-client/src/index.ts"]
+    }
+  },
+  "angularCompilerOptions": {
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true
+  }
+}

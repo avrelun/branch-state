@@ -108,6 +108,54 @@
         }
       ],
       "evidence": "Codex self-check, 2026-09-27: palette values compared with pinned Gruvbox source; package.json and README license declarations checked. Geometry prepared locally; PNGs exported from local SVGs. SVG uses system sans-serif text, without embedding or redistributing font files. This record does not constitute independent human approval or legal clearance."
+    },
+    {
+      "path": "docs/engineering/frontend-preview.png",
+      "sha256": "b726666549cbc3af7a6ae8eaad7beab3925669096114570edd2f5fd768d9c1e9",
+      "sources": [
+        {
+          "kind": "project",
+          "origin": "Branchstate page sources in frontend/apps/web/src/app/ and frontend/apps/web/src/styles.css",
+          "author": "Codex for Branchstate",
+          "license": "MIT",
+          "scope": "Project-owned page layout and text, rendered as a screenshot; third-party palette and font terms remain separate",
+          "notices": {
+            "LICENSE": "76204238c8ede4078c55d88bce695c276f92eee716e30c17a415d87f90e5942e"
+          }
+        },
+        {
+          "kind": "third-party",
+          "origin": "https://github.com/morhetz/gruvbox/blob/ef8864bb42bf244f0295d1c5a403b27e3d139695/colors/gruvbox.vim",
+          "author": "Pavel Pertsev (morhetz)",
+          "license": "MIT (declared upstream)",
+          "scope": "Five palette values used by the rendered page; pinned definitions and license declarations inspected",
+          "notices": {
+            "docs/branding/THIRD_PARTY_NOTICES.md": "53047fc1e8e94a02ce8e76331da11d947f11d878b268c758bf66522e957d73cd",
+            "frontend/THIRD_PARTY_NOTICES.md": "86e2da3264380946e9961d3f9f08e37db7c57418100a763cf58402482da1378f"
+          }
+        },
+        {
+          "kind": "third-party",
+          "origin": "https://github.com/notofonts/latin-greek-cyrillic/blob/NotoSans-v2.015/OFL.txt",
+          "author": "2022 The Noto Project Authors",
+          "license": "SIL OFL 1.1",
+          "scope": "Rasterized glyphs from Noto Sans Regular, Bold and Medium 2.015; no font files redistributed. Embedded declarations and pinned upstream license inspected; package license discrepancy documented",
+          "notices": {
+            "docs/engineering/frontend-dependencies.md": "6dd3e18a7e967229dd0d1422c0581fd3923c8f1e4fc5f79651a482aa36697269"
+          }
+        },
+        {
+          "kind": "third-party",
+          "origin": "https://github.com/dejavu-fonts/dejavu-fonts/blob/9b5d1b2ffeec20c7b46aa89c0223d783c02762cf/LICENSE",
+          "author": "Bitstream Inc. (2003), Tavmjong Bah (2006), DejaVu contributors",
+          "license": "Bitstream Vera and Arev permission terms; DejaVu changes public domain",
+          "scope": "Rasterized DejaVu Sans 2.37 fallback glyph; no font files redistributed. Actual embedded metadata and package license inspected against exact upstream revision",
+          "notices": {
+            "docs/engineering/frontend-dependencies.md": "6dd3e18a7e967229dd0d1422c0581fd3923c8f1e4fc5f79651a482aa36697269"
+          }
+        }
+      ],
+      "evidence": "Codex inspection, 2026-10-01: production page captured in Chrome 154 against the isolated FastAPI health endpoint; inspected page sources and pinned Gruvbox definitions/declarations. CDP on the same page composition identified Noto Sans Regular/Bold/Medium and DejaVu Sans; inspected actual font metadata and upstream terms as recorded in frontend-dependencies.md. The screenshot contains no personal data or embedded font binaries. Agent preparation and checks are not maintainer approval."
     }
   ]
 }

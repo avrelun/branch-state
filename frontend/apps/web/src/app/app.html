@@ -1,0 +1,56 @@
+<header>
+  <a class="brand" href="/" aria-label="Branchstate home"
+    >Branchstate<span aria-hidden="true">.</span></a
+  >
+  <span class="workspace-label">Local workspace</span>
+</header>
+
+<main>
+  <p class="eyebrow">A world of possibilities</p>
+  <h1>Start with a<br />working connection.</h1>
+  <p class="intro">
+    A small, reproducible business world. Your local workspace starts here.
+  </p>
+
+  <section
+    class="connection"
+    aria-labelledby="connection-title"
+    [attr.aria-busy]="state().kind === 'loading'"
+  >
+    <div class="card-heading">
+      <h2 id="connection-title">Workspace connection</h2>
+      <span
+        class="status-dot"
+        [class.connected]="state().kind === 'success'"
+        [class.failed]="state().kind === 'error'"
+        aria-hidden="true"
+      ></span>
+    </div>
+    <div class="connection-state" aria-live="polite" aria-atomic="true">
+      @switch (state().kind) { @case ('loading') {
+      <p class="state-title">Checking connection…</p>
+      <p class="state-detail">Connecting to your local service.</p>
+      } @case ('success') {
+      <p class="state-title success">Connected</p>
+      <p class="state-detail">Your service is responding and ready.</p>
+      } @case ('error') {
+      <p class="state-title error">Connection unavailable</p>
+      @let current = state(); @if (current.kind === 'error') {
+      <p class="state-detail">{{ current.message }}</p>
+      } } }
+    </div>
+    <button
+      type="button"
+      [disabled]="state().kind === 'loading'"
+      (click)="checkConnection()"
+    >
+      {{ state().kind === 'error' ? 'Try again' : 'Check connection' }}
+      <span aria-hidden="true">↗</span>
+    </button>
+  </section>
+</main>
+
+<footer>
+  Branchstate <span aria-hidden="true">/</span> A coherent world, one step at a
+  time.
+</footer>

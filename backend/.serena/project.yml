@@ -1,0 +1,5 @@
+project_name: branchstate-backend
+language_servers: [python]
+encoding: utf-8
+ignore_all_files_in_gitignore: true
+ignored_paths: [".venv/**", ".pytest_cache/**", ".ruff_cache/**"]

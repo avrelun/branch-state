@@ -2,7 +2,7 @@
 
 ## Project Structure & Current Status
 
-This repository currently contains planning documents, not an implemented application. `branchstate-starter.zip` is the original bundle; `branchstate-starter/` contains the extracted Markdown files. Research and branding assets exist; application source and application tests do not yet exist.
+This repository contains a minimal FastAPI backend, backend tests and a local PostgreSQL workflow. The frontend, application persistence and complete Compose workflow remain M0 work. `branchstate-starter/` contains the extracted product planning documents; the original bundle and historical research stay local.
 
 Read all seven documents before making architectural decisions. Start with `README.md` and `CODEX_START_PROMPT.md`; use `MILESTONES.md` to constrain scope. Architecture notes are suggested defaults, while the required stack is Python, FastAPI, Angular, and PostgreSQL.
 
@@ -10,7 +10,7 @@ For Milestone 0, propose a minimal layout such as `backend/`, `frontend/`, and `
 
 ## Build, Test, and Development Commands
 
-Application build, development, test, and lint commands are not configured yet. Repository checks are documented in README.md. Do not assume `npm test`, `pytest`, or `docker compose up --build` works until the corresponding tooling exists.
+README.md documents verified backend and repository checks. Use uv with `backend/pyproject.toml` and its lockfile; keep the backend independent of PostgreSQL until persistence is introduced. Frontend and complete Compose commands are not configured yet.
 
 Milestone 0 must provide a local Docker Compose workflow, one backend endpoint, one frontend page, automated tests, formatting, linting, and CI. Document exact runnable commands and prerequisites in the root README as tooling is introduced.
 
@@ -18,11 +18,11 @@ Milestone 0 must provide a local Docker Compose workflow, one backend endpoint, 
 
 Until formatter configuration is established, use four-space indentation for Python and two-space indentation for TypeScript, HTML, and configuration files. Use `snake_case` for Python modules and functions, `PascalCase` for classes, and `kebab-case` for Angular filenames.
 
-No formatter or linter is currently configured. Select tools during Milestone 0 and use the same checks locally and in CI. Prefer explicit domain rules and small modules over speculative abstractions.
+Backend formatting/lint use Ruff; strict type checking uses Pyright. Keep their configuration in `backend/pyproject.toml` and versions in `backend/uv.lock`. Prefer explicit domain rules and small modules over speculative abstractions.
 
 ## Testing Guidelines
 
-No testing framework or coverage threshold has been selected. Add basic checks in Milestone 0; introduce simulation behavior tests as domain logic arrives. Suggested naming is `test_*.py` for Python and `*.spec.ts` for Angular.
+Backend tests use pytest, with HTTP and settings checks that do not require PostgreSQL. No coverage threshold is selected. Introduce simulation behavior tests as domain logic arrives. Use `test_*.py` for Python and `*.spec.ts` for Angular.
 
 Verify invariants and reproducibility: identical seeds, simulator versions, configuration, and commands must produce identical outcomes. Test the simulation core without HTTP or PostgreSQL.
 

@@ -6,13 +6,14 @@ A synthetic retail world whose data comes from a coherent, reproducible simulati
 
 ## Current state
 
-The repository contains product planning, delivery tooling and a local PostgreSQL workflow. Backend and frontend implementation remains pending. Milestone 0 will provide Python/FastAPI, Angular, the complete Docker Compose workflow, tests, formatting, linting, and CI for the application.
+The repository contains product planning, delivery tooling and a local PostgreSQL workflow. The backend baseline has been checked against published metadata; backend/frontend implementation, locked dependencies and application checks remain pending. Milestone 0 will provide Python/FastAPI, Angular, the complete Docker Compose workflow, tests, formatting, linting, and CI for the application.
 
 ## Project map
 
 - [Product overview](branchstate-starter/README.md) and [milestones](branchstate-starter/MILESTONES.md)
 - [Contributing](CONTRIBUTING.md) and [publication policy](docs/engineering/publication-policy.md)
 - [Contributor guidance](AGENTS.md)
+- [Backend compatibility and implementation prerequisites](docs/engineering/backend-compatibility.md)
 
 Historical research, personal branding, operational records, and the original starter archive remain local and are excluded from publication. The extracted product documents are preserved.
 

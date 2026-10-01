@@ -6,7 +6,7 @@ A synthetic retail world whose data comes from a coherent, reproducible simulati
 
 ## Current state
 
-The repository contains product planning, delivery tooling and a local PostgreSQL workflow. The backend baseline has been checked against published metadata; backend/frontend implementation, locked dependencies and application checks remain pending. Milestone 0 will provide Python/FastAPI, Angular, the complete Docker Compose workflow, tests, formatting, linting, and CI for the application.
+The repository provides a minimal FastAPI backend with locked dependencies and automated checks, plus a local PostgreSQL workflow. The backend currently runs without a database. Angular, application persistence, the complete Docker Compose workflow and application CI remain Milestone 0 work.
 
 ## Project map
 
@@ -16,6 +16,32 @@ The repository contains product planning, delivery tooling and a local PostgreSQ
 - [Backend compatibility and implementation prerequisites](docs/engineering/backend-compatibility.md)
 
 Historical research, personal branding, operational records, and the original starter archive remain local and are excluded from publication. The extracted product documents are preserved.
+
+## Local backend
+
+Requires **Python 3.14.8**, **uv 0.12.21** and Node **26.10.0** for the project-local Pyright checker. No global Python packages or database are needed. From the repository root:
+
+```sh
+uv sync --project backend --locked --python 3.14.8 --no-python-downloads
+uv run --project backend --locked uvicorn branchstate.app:create_app --factory --reload --host 127.0.0.1 --port 8000
+```
+
+Open `http://127.0.0.1:8000/health`: `GET /health` returns HTTP 200 and `{"status":"ok"}` with JSON content type. It confirms the HTTP application is running; it does not check PostgreSQL. Unknown routes return JSON 404; unsupported methods return JSON 405. The response model is published at `/openapi.json`, with interactive API docs at `/docs`. Stop the development server with Ctrl+C; select another `--port` if 8000 is occupied.
+
+`backend/config.toml` holds non-secret settings. `app_name` is required and must be nonempty; `environment` accepts `development`, `test` or `production` and defaults to `development`. Invalid configuration prevents application creation. Optional `backend/.env` overrides use the keys in `backend/.env.example`; it is ignored by Git. Keep it dedicated to backend settings: unknown TOML/dotenv keys are rejected.
+
+Settings use **process environment > local dotenv > TOML > defaults**. Constructor arguments do not override these sources. Configuration paths resolve against the backend source directory regardless of working directory. For a wheel installation or container, set `BRANCHSTATE_CONFIG_DIR` to the absolute existing directory containing `config.toml` and optional `.env`; do not rely on a source-tree path. This locator is read only from the process environment. Backend settings and the root Compose `.env` are separate; database settings arrive with persistence.
+
+Run the locked backend checks from the repository root:
+
+```sh
+uv run --project backend --locked pytest backend/tests
+uv run --project backend --locked ruff check backend
+uv run --project backend --locked ruff format --check backend
+uv run --project backend --locked pyright --project backend/pyproject.toml
+```
+
+Use `uv run --project backend --locked ruff format backend` to format changes. Backend tests cover the health/OpenAPI contract, HTTP failures, configuration priority, validation and working-directory independence without PostgreSQL. CLI checks use project dependencies; editor extensions are optional. [Dependency sources and licenses](docs/engineering/backend-dependencies.md) cover the initial lockfile.
 
 ## Local PostgreSQL
 
@@ -61,7 +87,7 @@ python3 scripts/check-publication.py --revision HEAD
 git diff --check
 ```
 
-Before the first commit, omit `--revision HEAD` to check staged files. Enable the reviewed local hooks with `git config --local core.hooksPath .githooks`. Pre-commit runs the publication guard and whitespace check; pre-push checks the pushed tips. CI checks the committed tree. The guard requires current [asset provenance records](docs/engineering/asset-provenance.json), including tracked license notices, for supported media and fonts. These records require substantive review; passing checks do not establish legal clearance. These are repository checks; application tests arrive with M0.
+Before the first commit, omit `--revision HEAD` to check staged files. Enable the reviewed local hooks with `git config --local core.hooksPath .githooks`. Pre-commit runs the publication guard and whitespace check; pre-push checks the pushed tips. CI checks the committed tree. The guard requires current [asset provenance records](docs/engineering/asset-provenance.json), including tracked license notices, for supported media and fonts. These records require substantive review; passing checks do not establish legal clearance. These are repository checks; backend checks are listed above.
 
 ## Licensing
 
